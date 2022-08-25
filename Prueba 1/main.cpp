@@ -32,6 +32,8 @@ int SD3 = 0;
 int SD4 = 0;
 int SD5 = 0;
 
+int umbral = 920;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -48,6 +50,7 @@ for(i = 0; i < n; i++)
       lec3 += analogRead(s3);
       lec4 += analogRead(s4);
       lec5 += analogRead(s5);
+
   }
 
   lec0 = lec0/n;
@@ -57,7 +60,7 @@ for(i = 0; i < n; i++)
   lec4 = lec4/n;
   lec5 = lec5/n;
 
-if(lec0 > 900)
+if(lec0 > umbral)
    {
       SD0 = 1024;
     }
@@ -66,7 +69,7 @@ if(lec0 > 900)
       SD0 = 0;
   }
 
-if(lec1 > 900)
+if(lec1 > umbral)
    {
       SD1 = 1024;
     }
@@ -75,7 +78,7 @@ if(lec1 > 900)
       SD1 = 0;
   }
 
-if(lec2 > 900)
+if(lec2 > umbral)
    {
       SD2 = 1024;
     }
@@ -84,7 +87,7 @@ if(lec2 > 900)
       SD2 = 0;
   }
 
-if(lec3 > 900)
+if(lec3 > umbral)
    {
       SD3 = 1024;
     }
@@ -93,7 +96,7 @@ if(lec3 > 900)
       SD3 = 0;
   }
 
-if(lec4 > 900)
+if(lec4 > umbral)
    {
       SD4 = 1024;
     }
@@ -102,7 +105,7 @@ if(lec4 > 900)
       SD4 = 0;
   }
 
-if(lec4 > 900)
+if(lec5 > umbral)
    {
       SD5 = 1024;
     }
